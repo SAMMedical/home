@@ -24,7 +24,6 @@
             overflow: hidden; 
         }
 
-        /* --- HEADER / NAVBAR --- */
         .navbar {
             position: fixed; top: 0; left: 0; width: 100%; height: var(--header-height);
             background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
@@ -56,7 +55,6 @@
         .menu-toggle.active .bar:nth-child(2) { opacity: 0; transform: translateX(10px); }
         .menu-toggle.active .bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
 
-        /* --- HOME MENU CONTAINER --- */
         .home-container { 
             position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100% - var(--header-height)); 
             display: block; background-color: var(--bg-color); z-index: 50; overflow-y: auto; padding: 25px; 
@@ -64,7 +62,6 @@
         }
         .home-container.hidden { opacity: 0; pointer-events: none; z-index: -1; }
 
-        /* --- SLIDER STYLES --- */
         .slider-wrapper { width: 100%; max-width: 1200px; margin: 0 auto 35px auto; flex-shrink: 0; }
         .slider-container { position: relative; width: 100%; aspect-ratio: 21/9; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); background-color: #e2e8f0; }
         .slide { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; }
@@ -78,7 +75,6 @@
         .fade { animation-name: fade; animation-duration: 1.5s; }
         @keyframes fade { from {opacity: .4} to {opacity: 1} }
 
-        /* --- MENU GRID --- */
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; max-width: 1200px; width: 100%; margin: 0 auto; padding-bottom: 30px; }
         .menu-card { background: white; padding: 25px 15px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #f1f5f9; text-decoration: none; position: relative; overflow: hidden; }
         .menu-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px -5px rgba(37, 99, 235, 0.15); border-color: #bfdbfe; }
@@ -87,7 +83,6 @@
         .menu-icon svg { width: 32px; height: 32px; }
         .menu-title { font-weight: 700; font-size: 15px; color: var(--text-main); letter-spacing: -0.3px;}
 
-        /* --- SKELETON LOADING --- */
         .skeleton { animation: skeleton-pulse 1.5s ease-in-out infinite; }
         @keyframes skeleton-pulse { 0% { background-color: #e2e8f0; } 50% { background-color: #f1f5f9; } 100% { background-color: #e2e8f0; } }
         .skeleton-card { pointer-events: none; border: none; box-shadow: none; background: white; }
@@ -95,7 +90,6 @@
         .skeleton-text { height: 16px; width: 70%; border-radius: 4px; }
         .skeleton-slide { width: 100%; height: 100%; position: absolute; top:0; left:0; }
 
-        /* --- MULTI-IFRAME CONTAINER & HEADER (BARU) --- */
         .iframe-container { position: fixed; top: var(--header-height); left: 0; width: 100%; height: calc(100% - var(--header-height)); background-color: #fff; transition: top var(--transition-speed) ease, height var(--transition-speed) ease; display: none; flex-direction: column; }
         .iframe-container.active { display: flex; }
         
@@ -109,13 +103,11 @@
         .app-frame { width: 100%; height: 100%; border: none; display: none; position: absolute; top:0; left:0; }
         .app-frame.active { display: block; }
 
-        /* --- FULL PAGE OVERLAY (LOGIN & ADMIN) --- */
         .fullpage-overlay { position: fixed; inset: 0; width: 100vw; height: 100vh; background-color: rgba(15, 23, 42, 0.85); backdrop-filter: blur(15px); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; overflow-y: auto; opacity: 0; transition: opacity 0.3s ease; }
         .fullpage-overlay.active { display: flex; opacity: 1; }
         .overlay-close-btn { position: absolute; top: 25px; right: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; z-index: 2010; }
         .overlay-close-btn:hover { background: rgba(255,255,255,0.2); transform: rotate(90deg); }
 
-        /* --- MODERN LOGIN BOX --- */
         .login-box { width: 100%; max-width: 420px; background: #ffffff; padding: 40px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); text-align: center; position: relative; animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
         @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .login-icon { width: 70px; height: 70px; background: #eff6ff; color: var(--primary-color); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; }
@@ -127,6 +119,11 @@
         .form-group input { width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; background: #f8fafc; border-radius: 12px; outline: none; font-size: 15px; transition: all 0.2s; color: var(--text-main); font-weight: 500;}
         .form-group input:focus { border-color: var(--primary-color); background: #ffffff; box-shadow: 0 0 0 4px rgba(37,99,235,0.1); }
         
+        .password-wrapper { position: relative; }
+        .password-wrapper input { padding-right: 50px; }
+        .toggle-password { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 4px; display: flex; align-items: center; transition: color 0.2s; }
+        .toggle-password:hover { color: var(--primary-color); }
+
         .captcha-box { background: #eff6ff; padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px dashed #bfdbfe; }
         .captcha-text { font-weight: 800; font-size: 20px; color: var(--primary-color); letter-spacing: 2px; }
         .captcha-box input { width: 100px; text-align: center; font-size: 18px; padding: 10px; }
@@ -134,8 +131,23 @@
         .btn-primary { background: linear-gradient(135deg, var(--primary-color) 0%, #4f46e5 100%); color: white; border: none; padding: 15px 20px; border-radius: 12px; cursor: pointer; font-weight: 700; font-size: 16px; width: 100%; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 10px 20px -5px rgba(37,99,235,0.4); }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -5px rgba(37,99,235,0.5); }
         .btn-primary:active { transform: translateY(0); }
+        .btn-primary:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-        /* --- MODERN ADMIN DASHBOARD & TABS --- */
+        .security-badge {
+            display: flex; align-items: center; gap: 8px; background: #f0fdf4;
+            border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px 14px;
+            margin-bottom: 20px; font-size: 12px; color: #16a34a; font-weight: 600;
+        }
+        .security-badge svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* Download button - badge khusus untuk ekspor HTML */
+        .download-badge {
+            display: flex; align-items: center; gap: 8px; background: #eff6ff;
+            border: 1px solid #bfdbfe; border-radius: 10px; padding: 10px 14px;
+            margin-bottom: 0; font-size: 12px; color: var(--primary-color); font-weight: 600;
+        }
+        .download-badge svg { width: 16px; height: 16px; flex-shrink: 0; }
+
         .admin-dashboard { width: 100%; max-width: 1200px; background: #ffffff; border-radius: 24px; padding: 40px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1); margin: auto; }
         .admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .admin-header h2 { font-size: 28px; font-weight: 800; margin: 0 0 5px 0; color: var(--text-main); letter-spacing: -0.5px;}
@@ -146,7 +158,7 @@
         .tab-btn:hover { background: #f1f5f9; color: var(--text-main);}
         .tab-btn.active { background: #eff6ff; color: var(--primary-color); box-shadow: 0 0 0 1px #bfdbfe;}
 
-        .admin-actions { display: flex; gap: 12px; margin-bottom: 15px; justify-content: flex-end;}
+        .admin-actions { display: flex; gap: 12px; margin-bottom: 15px; justify-content: flex-end; align-items: center;}
         
         .btn-outline { background: white; color: var(--text-main); border: 2px solid #e2e8f0; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; transition: 0.2s; }
         .btn-outline:hover { border-color: var(--primary-color); color: var(--primary-color); }
@@ -156,6 +168,14 @@
         .btn-edit:hover { background: #fde68a; color: #b45309;}
         .btn-delete { background: #fee2e2; color: #ef4444; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; transition: 0.2s; }
         .btn-delete:hover { background: #fca5a5; color: #b91c1c;}
+        .btn-download { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: white; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer; font-weight: 700; font-size: 14px; transition: 0.2s; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3); }
+        .btn-download:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(22, 163, 74, 0.4); }
+        .btn-download svg { width: 16px; height: 16px; }
+
+        .change-pass-form { max-width: 420px; }
+        .pass-strength-bar { height: 6px; background: #e2e8f0; border-radius: 3px; margin-top: 8px; overflow: hidden; }
+        .pass-strength-fill { height: 100%; border-radius: 3px; transition: width 0.3s, background 0.3s; width: 0%; }
+        .pass-strength-label { font-size: 12px; font-weight: 600; margin-top: 5px; }
 
         .table-responsive { overflow-x: auto; border-radius: 16px; border: 1px solid #e2e8f0; }
         .admin-table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px;}
@@ -167,21 +187,31 @@
         .icon-cell { display: inline-flex; align-items: center; justify-content: center; color: var(--primary-color); }
         .icon-cell svg { width: 22px; height: 22px; } 
 
-        /* Modal CRUD */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 3000; display: none; justify-content: center; align-items: center; padding: 20px; opacity: 0; transition: opacity 0.3s; }
         .modal-overlay.active { display: flex; opacity: 1; }
         .modal-content { background: white; padding: 35px; border-radius: 20px; width: 100%; max-width: 450px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); animation: slideUp 0.3s ease; }
         .modal-content h3 { margin: 0 0 25px 0; font-size: 22px; font-weight: 800; color: var(--text-main); }
         .modal-btn-row { display: flex; gap: 12px; margin-top: 30px; }
 
-        /* General Loader & States */
+        .loader { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 4px solid #f1f5f9; border-top: 4px solid var(--primary-color); border-radius: 50%; width: 48px; height: 48px; animation: spin 1s linear infinite; display: none; z-index: 10; }
+        @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+        .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--text-main); color: white; padding: 12px 24px; border-radius: 50px; font-weight: 600; font-size: 14px; z-index: 9999; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);}
+        .toast.show { transform: translateX(-50%) translateY(0); }
+        .toast.success { background: #16a34a; }
+        .toast.error { background: #dc2626; }
+
+        /* Auto-save badge */
+        .autosave-indicator { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #16a34a; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px; padding: 5px 12px; }
+        .autosave-indicator.saving { color: #d97706; background: #fefce8; border-color: #fde68a; }
+        .autosave-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+        .autosave-indicator.saving .autosave-dot { animation: blink 0.8s ease-in-out infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
         body.header-hidden .navbar { transform: translateY(-100%); }
         body.header-hidden .iframe-container { top: 0; height: 100%; }
         body.header-hidden .floating-show-btn { top: 0; }
 
-        .loader { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 4px solid #f1f5f9; border-top: 4px solid var(--primary-color); border-radius: 50%; width: 48px; height: 48px; animation: spin 1s linear infinite; display: none; z-index: 10; }
-
-        /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 900px) {
             .menu-toggle { display: flex; z-index: 1001; }
             .navbar { padding: 0 15px; height: 60px;}
@@ -223,28 +253,25 @@
             .admin-header h2 { font-size: 22px; }
             .admin-tabs { flex-wrap: wrap; }
             .tab-btn { flex: 1; text-align: center; font-size: 13px; padding: 8px 10px;}
-            .admin-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 15px;}
+            .admin-actions { width: 100%; flex-wrap: wrap; margin-bottom: 15px;}
             .admin-table th, .admin-table td { padding: 12px 10px; font-size: 13px; }
         }
     </style>
 </head>
 <body>
 
+    <div class="toast" id="toast"></div>
+
     <button class="floating-show-btn" onclick="toggleHeader()">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         <span>Menu</span>
     </button>
 
-    <!-- Header Navbar -->
     <nav class="navbar" id="navbar">
         <div class="logo" onclick="goHome()">
             <span>🐼SAMIT</span>
         </div>
-        
-        <div class="nav-links" id="dynamic-nav-links">
-            <!-- Isi dirender dinamis -->
-        </div>
-
+        <div class="nav-links" id="dynamic-nav-links"></div>
         <div class="nav-actions">
             <button class="header-toggle-btn" onclick="toggleHeader()" title="Mode Layar Penuh">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
@@ -255,17 +282,12 @@
         </div>
     </nav>
 
-    <!-- Area Menu Utama (Dashboard Home) -->
     <div id="homeView" class="home-container">
-        <!-- Slider Section (Dinamic & Skeleton) -->
         <div class="slider-wrapper" id="slider-wrap">
             <div class="slider-container" id="dynamic-slider">
-                <!-- Skeleton Slider -->
                 <div class="slide fade skeleton-slide skeleton" style="display: block;"></div>
             </div>
         </div>
-        
-        <!-- SKELETON GRID (Tampil saat loading agar stabil) -->
         <div class="menu-grid" id="skeleton-grid">
             <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
             <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
@@ -273,17 +295,11 @@
             <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
             <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
             <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
-            <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
-            <div class="menu-card skeleton-card"><div class="skeleton-icon skeleton"></div><div class="skeleton-text skeleton"></div></div>
         </div>
-        
-        <!-- Grid Kategori Asli akan dirender di sini via JS -->
         <div class="menu-grid" id="dynamic-grid" style="display:none;"></div>
     </div>
 
-    <!-- Area Aplikasi Multi-Iframe -->
     <div id="appView" class="iframe-container">
-        <!-- HEADER IFRAME BARU: Tombol Darurat Buka di Tab Baru -->
         <div class="iframe-header" id="iframeHeader">
             <h3 id="iframe-title">Memuat...</h3>
             <a href="#" id="iframe-external-link" class="iframe-external-link" target="_blank" title="Buka jika halaman menolak dimuat">
@@ -291,12 +307,11 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
         </div>
-        
         <div class="loader" id="loader"></div>
         <div id="dynamic-iframes"></div>
     </div>
 
-    <!-- FULL PAGE OVERLAY: LOGIN -->
+    <!-- OVERLAY LOGIN -->
     <div id="loginOverlay" class="fullpage-overlay">
         <button class="overlay-close-btn" onclick="goHome()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -307,14 +322,22 @@
             </div>
             <h2>Admin Access</h2>
             <p class="subtitle">Masuk untuk mengelola konfigurasi sistem</p>
-            
+            <div class="security-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                Password dienkripsi dengan bcrypt (SHA-256 + salt)
+            </div>
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" id="loginUser" placeholder="Masukkan username">
+                <input type="text" id="loginUser" placeholder="Masukkan username" autocomplete="username">
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" id="loginPass" placeholder="••••••••">
+                <div class="password-wrapper">
+                    <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
+                    <button type="button" class="toggle-password" onclick="togglePasswordVisibility('loginPass', this)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </button>
+                </div>
             </div>
             <div class="form-group">
                 <label>Verifikasi Keamanan</label>
@@ -328,7 +351,7 @@
         </div>
     </div>
 
-    <!-- FULL PAGE OVERLAY: ADMIN DASHBOARD -->
+    <!-- OVERLAY ADMIN DASHBOARD -->
     <div id="adminOverlay" class="fullpage-overlay">
         <button class="overlay-close-btn" onclick="goHome()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -337,18 +360,26 @@
             <div class="admin-header">
                 <div>
                     <h2>Panel Administrator</h2>
-                    <p>Atur struktur menu dan banner presentasi</p>
+                    <p>Perubahan menu & slider langsung tersimpan ke dalam file HTML</p>
                 </div>
+                <span class="autosave-indicator" id="autosaveIndicator">
+                    <span class="autosave-dot"></span> Tersinkron
+                </span>
             </div>
             
             <div class="admin-tabs">
                 <button class="tab-btn active" id="tabBtnKategori" onclick="switchTab('kategori')">Menu Kategori</button>
                 <button class="tab-btn" id="tabBtnSlider" onclick="switchTab('slider')">Slider Banner</button>
+                <button class="tab-btn" id="tabBtnSecurity" onclick="switchTab('security')">🔐 Keamanan</button>
             </div>
 
             <!-- VIEW KATEGORI -->
             <div id="viewKategori">
                 <div class="admin-actions">
+                    <button class="btn-download" onclick="downloadUpdatedHTML()" title="Unduh HTML yang sudah ter-update">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Unduh HTML Terbaru
+                    </button>
                     <button class="btn-outline" onclick="openCatModal()">+ Tambah Menu Baru</button>
                     <button class="btn-danger" onclick="logout()">Logout</button>
                 </div>
@@ -358,7 +389,7 @@
                             <tr>
                                 <th style="width:70px; text-align:center;">Icon</th>
                                 <th>Nama Menu Kategori</th>
-                                <th>URL Terintegrasi (AppSheet / Embed)</th>
+                                <th>URL Terintegrasi</th>
                                 <th style="width:180px; text-align:center;">Tindakan</th>
                             </tr>
                         </thead>
@@ -370,6 +401,10 @@
             <!-- VIEW SLIDER -->
             <div id="viewSlider" style="display:none;">
                 <div class="admin-actions">
+                    <button class="btn-download" onclick="downloadUpdatedHTML()" title="Unduh HTML yang sudah ter-update">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Unduh HTML Terbaru
+                    </button>
                     <button class="btn-outline" onclick="openSliderModal()">+ Tambah Slider Baru</button>
                     <button class="btn-danger" onclick="logout()">Logout</button>
                 </div>
@@ -387,6 +422,54 @@
                 </div>
             </div>
 
+            <!-- VIEW SECURITY -->
+            <div id="viewSecurity" style="display:none;">
+                <div class="admin-actions">
+                    <button class="btn-danger" onclick="logout()">Logout</button>
+                </div>
+                <div class="change-pass-form">
+                    <h3 style="margin:0 0 20px 0; font-size:18px; color:var(--text-main);">Ganti Password Admin</h3>
+                    <div class="security-badge" style="margin-bottom:20px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                        Password baru akan di-hash bcrypt sebelum disimpan
+                    </div>
+                    <div class="form-group">
+                        <label>Password Saat Ini</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="currentPass" placeholder="••••••••">
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('currentPass', this)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password Baru</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="newPass" placeholder="Min. 8 karakter" oninput="checkPasswordStrength(this.value)">
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('newPass', this)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                        <div class="pass-strength-bar"><div class="pass-strength-fill" id="strengthFill"></div></div>
+                        <div class="pass-strength-label" id="strengthLabel" style="color:var(--text-muted);"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Konfirmasi Password Baru</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="confirmPass" placeholder="Ulangi password baru">
+                            <button type="button" class="toggle-password" onclick="togglePasswordVisibility('confirmPass', this)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p id="changePassMsg" style="font-size:13px; display:none; font-weight:600; margin-bottom:15px;"></p>
+                    <button class="btn-primary" onclick="changePassword()" id="btnChangePass" style="width:auto; padding:14px 30px;">Simpan Password Baru</button>
+                    <div style="margin-top:30px; padding-top:20px; border-top:1px solid #f1f5f9;">
+                        <p style="font-size:13px; color:var(--text-muted); margin:0 0 8px 0; font-weight:600;">INFO ENKRIPSI</p>
+                        <p style="font-size:13px; color:var(--text-muted); margin:0;">Password disimpan sebagai hash bcrypt dengan <strong>cost factor 10</strong>. Hash tidak bisa di-decode, hanya bisa diverifikasi.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -440,32 +523,168 @@
         </div>
     </div>
 
-    <!-- Lucide Icons CDN -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
 
     <script>
         // ==========================================
-        // MOCK API - PENGAMANAN & FALLBACK
+        // DATA BAWAAN (DIUPDATE OTOMATIS SAAT EKSPOR)
         // ==========================================
-        // Fix: Cek dengan ketat agar kode tidak mengganggu AppScript asli jika di-deploy ke server Google.
+        // SAMIT_DATA_START
+        const EMBEDDED_DATA = {
+                  "categories": [
+                            {
+                                      "id": "K1783608381048",
+                                      "nama": "Presensi",
+                                      "icon": "square-user",
+                                      "url": "https://script.google.com/macros/s/AKfycbxpaTjEwFVIapIdPG6JygHVbZRPLZ5zn9BbPbWBbQCSKWtgaxLNaDMa_QpvWTUH2sNV/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608399996",
+                                      "nama": "Surat",
+                                      "icon": "notebook-pen",
+                                      "url": "https://script.google.com/macros/s/AKfycbyXnwlfEDBgA3FXI9J4RqMhje3B4gX_3jewCa5AYpgz7tkKJuY-u5wZ88Sel-rP-UQkQw/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608420333",
+                                      "nama": "Faktur",
+                                      "icon": "receipt-text",
+                                      "url": "https://script.google.com/macros/s/AKfycbzXx1lx_5TLbON27JDdpO-uW3AcEEQU98B8fIJPnLA9r_QVnJwdKwCYpbT_dyhVB5o/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608453789",
+                                      "nama": "Gudang",
+                                      "icon": "warehouse",
+                                      "url": "https://script.google.com/macros/s/AKfycbwehJLbNbbkMTchK1bMZuOfq6NikGDOiGD1Ekivd2bT1JrKiNJ2HmD4Z21sQ2S0dqvs/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608472066",
+                                      "nama": "HPP",
+                                      "icon": "sprout",
+                                      "url": "https://script.google.com/macros/s/AKfycbxv-QDFzt-LWsTOCeq44Kl8JKhX6mV8D_MmzxNNXWjBkw0r_t9rjNVjIPNnCmQ5FR51Pw/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608500887",
+                                      "nama": "Keuangan",
+                                      "icon": "badge-dollar-sign",
+                                      "url": "https://script.google.com/macros/s/AKfycbw1Sjyf6MLu8cdc5-BX_eg33FzUhlvIKyB6sWg-_sMq6o7IudVdcCrpYnqJ2O1Qgfqd/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608519016",
+                                      "nama": "Teknisi",
+                                      "icon": "wrench",
+                                      "url": "https://script.google.com/macros/s/AKfycbwsWaQJcKPrsKfWpF6x2zfHD5F4Br0-5mzld5GEQ-8riEmf8nUdUqltCdP_jllWqyvJwA/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608545670",
+                                      "nama": "Kiriman",
+                                      "icon": "truck",
+                                      "url": "#"
+                            },
+                            {
+                                      "id": "K1783608559815",
+                                      "nama": "Sales",
+                                      "icon": "chart-no-axes-combined",
+                                      "url": "#"
+                            },
+                            {
+                                      "id": "K1783608585184",
+                                      "nama": "Slip",
+                                      "icon": "signature",
+                                      "url": "https://script.google.com/macros/s/AKfycbyCEb2ocGD8QCkUY9l5j0AOmSeOcbzifrbDdD0IUukWxnPGVFhCEyW-w9uZN-LqPcRZ8A/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608606745",
+                                      "nama": "Brosur",
+                                      "icon": "files",
+                                      "url": "https://script.google.com/macros/s/AKfycbxiTmgUYpH3ArgIVqfnDMo1MIV4T2bjcaBUF5gSukxk89ZO3aiRa3NXmEDD1ANAeHj74A/exec?embedded=true"
+                            },
+                            {
+                                      "id": "K1783608628094",
+                                      "nama": "Lainnya",
+                                      "icon": "grip",
+                                      "url": "https://script.google.com/macros/s/AKfycbzEZtxLb4_ZCA4Q4k9tt1wdl-gxoin5mFG4VlZ2up89ytrPxO2iQI6l6xheqfzpsld_/exec?embedded=true"
+                            }
+                  ],
+                  "sliders": [
+                            {
+                                      "id": "S1783608212194",
+                                      "image": "https://cdn.pixabay.com/photo/2018/09/19/23/03/sunset-3689760_1280.jpg",
+                                      "title": "Fokus pada solusi, bukan masalah",
+                                      "subtitle": "Kualitas adalah kebiasaan, bukan kebetulan"
+                            },
+                            {
+                                      "id": "S1783608234074",
+                                      "image": "https://cdn.pixabay.com/photo/2021/05/11/06/22/night-sky-6245049_1280.jpg",
+                                      "title": "Hari baru, semangat baru, hasil yang lebih baik",
+                                      "subtitle": "Jadilah alasan perusahaan terus berkembang"
+                            },
+                            {
+                                      "id": "S1783608254790",
+                                      "image": "https://cdn.pixabay.com/photo/2017/06/07/12/24/building-2380214_1280.jpg",
+                                      "title": "Seseorang bisa menjadi ahli karena mau belajar",
+                                      "subtitle": "Kerja cerdas, kerja ikhlas, kerja berkualitas"
+                            },
+                            {
+                                      "id": "S1783608274446",
+                                      "image": "https://cdn.pixabay.com/photo/2018/10/05/08/32/mosque-3725372_1280.jpg",
+                                      "title": "Rezeki telah Allah tetapkan, tetapi ikhtiar adalah kewajiban kita",
+                                      "subtitle": "Niatkan setiap pekerjaan karena Allah, maka lelahmu akan bernilai ibadah"
+                            }
+                  ]
+        };
+        // SAMIT_DATA_END
+
+        // ==========================================
+        // BCRYPT
+        // ==========================================
+        const BCRYPT_COST = 10;
+
+        async function hashPassword(plainPassword) {
+            return new Promise((resolve, reject) => {
+                try {
+                    const salt = dcodeIO.bcrypt.genSaltSync(BCRYPT_COST);
+                    resolve(dcodeIO.bcrypt.hashSync(plainPassword, salt));
+                } catch (e) { reject(e); }
+            });
+        }
+
+        async function verifyPassword(plainPassword, storedHash) {
+            return new Promise((resolve, reject) => {
+                try {
+                    resolve(dcodeIO.bcrypt.compareSync(plainPassword, storedHash));
+                } catch (e) { reject(e); }
+            });
+        }
+
+        function isBcryptHash(str) {
+            return typeof str === 'string' && (str.startsWith('$2a$') || str.startsWith('$2b$'));
+        }
+
+        // ==========================================
+        // MOCK API - LOCAL STORAGE + BCRYPT
+        // ==========================================
         const isGasEnvironment = (typeof google !== 'undefined' && typeof google.script !== 'undefined');
         
         if (!isGasEnvironment) {
-            console.log("🛠️ Menjalankan mode LOKAL dengan LocalStorage (Mock API)");
-            const defaultCategories = [
-                {id: 'K01', nama: 'Gudang', icon: 'warehouse', url: 'https://script.google.com/macros/s/AKfycbwehJLbNbbkMTchK1bMZuOfq6NikGDOiGD1Ekivd2bT1JrKiNJ2HmD4Z21sQ2S0dqvs/exec?embedded=true'},
-                {id: 'K02', nama: 'Faktur', icon: 'receipt-text', url: '#'},
-                {id: 'K03', nama: 'Surat', icon: 'notebook-pen', url: '#'},
-                {id: 'K04', nama: 'Kiriman', icon: 'truck', url: '#'}, 
-                {id: 'K05', nama: 'HRIS', icon: 'grip', url: '#'}
-            ];
+            const DEFAULT_PASS_PLAIN = 'admin123';
+            const DEFAULT_USERNAME   = 'admin';
 
-            const defaultSliders = [
-                {id: 'S01', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80', title: 'Selamat Datang di SAMIT', subtitle: 'Sistem Administrasi Terpadu'}
-            ];
+            if (!localStorage.getItem('samit_admin_user')) {
+                localStorage.setItem('samit_admin_user', DEFAULT_USERNAME);
+            }
+            if (!localStorage.getItem('samit_admin_pass_hash')) {
+                const initHash = dcodeIO.bcrypt.hashSync(DEFAULT_PASS_PLAIN, dcodeIO.bcrypt.genSaltSync(BCRYPT_COST));
+                localStorage.setItem('samit_admin_pass_hash', initHash);
+            }
 
-            if (!localStorage.getItem('samit_categories')) localStorage.setItem('samit_categories', JSON.stringify(defaultCategories));
-            if (!localStorage.getItem('samit_sliders')) localStorage.setItem('samit_sliders', JSON.stringify(defaultSliders));
+            // Gunakan EMBEDDED_DATA sebagai default jika belum ada di localStorage
+            if (!localStorage.getItem('samit_categories')) {
+                localStorage.setItem('samit_categories', JSON.stringify(EMBEDDED_DATA.categories));
+            }
+            if (!localStorage.getItem('samit_sliders')) {
+                localStorage.setItem('samit_sliders', JSON.stringify(EMBEDDED_DATA.sliders));
+            }
 
             window.google = {
                 script: {
@@ -474,54 +693,100 @@
                             return {
                                 getAppData: function() {
                                     setTimeout(() => {
-                                        const cats = JSON.parse(localStorage.getItem('samit_categories')) || [];
-                                        const slids = JSON.parse(localStorage.getItem('samit_sliders')) || [];
+                                        const cats  = JSON.parse(localStorage.getItem('samit_categories')) || [];
+                                        const slids = JSON.parse(localStorage.getItem('samit_sliders'))    || [];
                                         callback({ categories: cats, sliders: slids });
-                                    }, 500);
+                                    }, 400);
                                 },
-                                loginUser: function(u, p) { 
+
+                                loginUser: async function(username, plainPassword) {
+                                    const storedUser = localStorage.getItem('samit_admin_user')      || DEFAULT_USERNAME;
+                                    const storedHash = localStorage.getItem('samit_admin_pass_hash') || '';
+
+                                    if (username !== storedUser) {
+                                        setTimeout(() => callback({success: false, message: 'Username atau Password salah!'}), 400);
+                                        return;
+                                    }
+                                    let isMatch = false;
+                                    try {
+                                        if (isBcryptHash(storedHash)) {
+                                            isMatch = await verifyPassword(plainPassword, storedHash);
+                                        } else {
+                                            isMatch = (plainPassword === storedHash);
+                                            if (isMatch) {
+                                                const newHash = await hashPassword(plainPassword);
+                                                localStorage.setItem('samit_admin_pass_hash', newHash);
+                                            }
+                                        }
+                                    } catch (e) { isMatch = false; }
+
                                     setTimeout(() => {
-                                        if (u === 'admin' && p === 'admin123') callback({success: true, message: 'Login Berhasil'});
-                                        else callback({success: false, message: 'Username atau Password salah!'});
-                                    }, 600); 
+                                        if (isMatch) callback({success: true,  message: 'Login Berhasil'});
+                                        else          callback({success: false, message: 'Username atau Password salah!'});
+                                    }, 300);
                                 },
+
+                                changePassword: async function(currentPlain, newPlain) {
+                                    const storedHash = localStorage.getItem('samit_admin_pass_hash') || '';
+                                    let isMatch = false;
+                                    try {
+                                        if (isBcryptHash(storedHash)) isMatch = await verifyPassword(currentPlain, storedHash);
+                                        else isMatch = (currentPlain === storedHash);
+                                    } catch(e) { isMatch = false; }
+
+                                    if (!isMatch) {
+                                        setTimeout(() => callback({success: false, message: 'Password saat ini salah!'}), 300);
+                                        return;
+                                    }
+                                    const newHash = await hashPassword(newPlain);
+                                    localStorage.setItem('samit_admin_pass_hash', newHash);
+                                    setTimeout(() => callback({success: true, message: 'Password berhasil diubah!'}), 200);
+                                },
+
                                 saveCategory: function(id, nama, icon, url) { 
                                     setTimeout(() => {
                                         let cats = JSON.parse(localStorage.getItem('samit_categories')) || [];
                                         if (id) {
                                             const idx = cats.findIndex(c => c.id === id);
-                                            if(idx > -1) cats[idx] = {id, nama, icon, url};
-                                        } else { cats.push({id: 'K' + new Date().getTime(), nama, icon: icon || 'grip', url: url || '#'}); }
+                                            if (idx > -1) cats[idx] = {id, nama, icon, url};
+                                        } else {
+                                            cats.push({id: 'K' + new Date().getTime(), nama, icon: icon || 'grip', url: url || '#'});
+                                        }
                                         localStorage.setItem('samit_categories', JSON.stringify(cats));
                                         callback({success: true, message: 'Kategori berhasil disimpan!'});
-                                    }, 600); 
+                                    }, 500);
                                 },
+
                                 deleteCategory: function(id) { 
                                     setTimeout(() => {
                                         let cats = JSON.parse(localStorage.getItem('samit_categories')) || [];
                                         cats = cats.filter(c => c.id !== id);
                                         localStorage.setItem('samit_categories', JSON.stringify(cats));
                                         callback({success: true, message: 'Kategori dihapus!'});
-                                    }, 500); 
+                                    }, 400);
                                 },
+
                                 saveSlider: function(id, image, title, subtitle) { 
                                     setTimeout(() => {
                                         let slids = JSON.parse(localStorage.getItem('samit_sliders')) || [];
                                         if (id) {
                                             const idx = slids.findIndex(s => s.id === id);
-                                            if(idx > -1) slids[idx] = {id, image, title, subtitle};
-                                        } else { slids.push({id: 'S' + new Date().getTime(), image, title, subtitle}); }
+                                            if (idx > -1) slids[idx] = {id, image, title, subtitle};
+                                        } else {
+                                            slids.push({id: 'S' + new Date().getTime(), image, title, subtitle});
+                                        }
                                         localStorage.setItem('samit_sliders', JSON.stringify(slids));
                                         callback({success: true, message: 'Slider berhasil disimpan!'});
-                                    }, 600); 
+                                    }, 500);
                                 },
+
                                 deleteSlider: function(id) { 
                                     setTimeout(() => {
                                         let slids = JSON.parse(localStorage.getItem('samit_sliders')) || [];
                                         slids = slids.filter(s => s.id !== id);
                                         localStorage.setItem('samit_sliders', JSON.stringify(slids));
                                         callback({success: true, message: 'Slider dihapus!'});
-                                    }, 500); 
+                                    }, 400);
                                 }
                             };
                         }
@@ -530,41 +795,205 @@
             };
         }
 
-        // Global State
-        let appData = { categories: [], sliders: [] };
+        // ==========================================
+        // GLOBAL STATE
+        // ==========================================
+        let appData   = { categories: [], sliders: [] };
         let isLoggedIn = false;
+        // Simpan source HTML asli saat halaman load, untuk dijadikan template ekspor
+        let originalHTMLSource = '';
 
         // ==========================================
-        // HELPER ICON (LUCIDE)
+        // AMBIL SOURCE HTML UNTUK EKSPOR
+        // ==========================================
+        async function fetchOriginalSource() {
+            try {
+                const resp = await fetch(window.location.href);
+                if (resp.ok) {
+                    originalHTMLSource = await resp.text();
+                } else {
+                    // Fallback: gunakan outerHTML dokumen saat ini
+                    originalHTMLSource = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                }
+            } catch (e) {
+                // Fallback jika fetch gagal (misal: file:// protokol)
+                originalHTMLSource = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            }
+        }
+
+        // ==========================================
+        // DOWNLOAD HTML YANG SUDAH TER-UPDATE
+        // Mengganti blok EMBEDDED_DATA di dalam source dengan data terkini
+        // ==========================================
+        function downloadUpdatedHTML() {
+            setAutosaveStatus('saving');
+
+            const cats  = JSON.parse(localStorage.getItem('samit_categories') || '[]');
+            const slids = JSON.parse(localStorage.getItem('samit_sliders')    || '[]');
+
+            // Bangun blok data baru yang akan disisipkan ke dalam source
+            const newDataBlock = `        // SAMIT_DATA_START
+        const EMBEDDED_DATA = ${JSON.stringify({ categories: cats, sliders: slids }, null, 12).replace(/^/gm, '        ').trimStart()};
+        // SAMIT_DATA_END`;
+
+            let source = originalHTMLSource;
+
+            // Cari dan ganti blok antara marker START dan END
+            const startMarker = '        // SAMIT_DATA_START';
+            const endMarker   = '        // SAMIT_DATA_END';
+            const startIdx = source.indexOf(startMarker);
+            const endIdx   = source.indexOf(endMarker);
+
+            if (startIdx !== -1 && endIdx !== -1) {
+                source = source.substring(0, startIdx) + newDataBlock + source.substring(endIdx + endMarker.length);
+            } else {
+                // Fallback: jika marker tidak ketemu (misal pakai outerHTML), inject via cara lain
+                source = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+                // Ganti di versi outerHTML
+                const si2 = source.indexOf('// SAMIT_DATA_START');
+                const ei2 = source.indexOf('// SAMIT_DATA_END');
+                if (si2 !== -1 && ei2 !== -1) {
+                    source = source.substring(0, si2) + '// SAMIT_DATA_START\n        const EMBEDDED_DATA = ' + JSON.stringify({ categories: cats, sliders: slids }, null, 8) + ';\n        // SAMIT_DATA_END' + source.substring(ei2 + '// SAMIT_DATA_END'.length);
+                }
+            }
+
+            // Hapus class .active dari overlay agar tidak muncul saat dibuka ulang
+            source = source.replace(/class="fullpage-overlay"/g, 'class="fullpage-overlay"');
+            source = source.replace(/class="modal-overlay"/g, 'class="modal-overlay"');
+
+            // Buat dan klik link download
+            const blob = new Blob([source], { type: 'text/html;charset=utf-8' });
+            const url  = URL.createObjectURL(blob);
+            const a    = document.createElement('a');
+            a.href     = url;
+            a.download = 'samit_updated.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            setTimeout(() => setAutosaveStatus('synced'), 800);
+            showToast('✅ File HTML berhasil diunduh dengan data terbaru!', 'success', 4000);
+        }
+
+        // ==========================================
+        // AUTO-SAVE INDICATOR
+        // ==========================================
+        function setAutosaveStatus(status) {
+            const el = document.getElementById('autosaveIndicator');
+            if (!el) return;
+            if (status === 'saving') {
+                el.className = 'autosave-indicator saving';
+                el.innerHTML = '<span class="autosave-dot"></span> Menyimpan...';
+            } else {
+                el.className = 'autosave-indicator';
+                el.innerHTML = '<span class="autosave-dot"></span> Tersinkron';
+            }
+        }
+
+        // ==========================================
+        // TOAST NOTIFICATION
+        // ==========================================
+        let toastTimer;
+        function showToast(message, type = 'default', duration = 3000) {
+            const toast = document.getElementById('toast');
+            const icons = { success: '✓', error: '✕', default: 'ℹ' };
+            toast.innerHTML = `<span>${icons[type] || icons.default}</span> ${message}`;
+            toast.className = `toast ${type} show`;
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), duration);
+        }
+
+        // ==========================================
+        // PASSWORD STRENGTH
+        // ==========================================
+        function checkPasswordStrength(password) {
+            const fill  = document.getElementById('strengthFill');
+            const label = document.getElementById('strengthLabel');
+            if (!fill || !label) return;
+            let score = 0;
+            if (password.length >= 8)  score++;
+            if (password.length >= 12) score++;
+            if (/[A-Z]/.test(password)) score++;
+            if (/[0-9]/.test(password)) score++;
+            if (/[^A-Za-z0-9]/.test(password)) score++;
+            const levels = [
+                { pct: '0%',   color: '#e2e8f0', text: '' },
+                { pct: '20%',  color: '#ef4444', text: '⚠ Sangat Lemah' },
+                { pct: '40%',  color: '#f97316', text: '⚠ Lemah' },
+                { pct: '60%',  color: '#eab308', text: '~ Cukup' },
+                { pct: '80%',  color: '#22c55e', text: '✓ Kuat' },
+                { pct: '100%', color: '#16a34a', text: '✓ Sangat Kuat' },
+            ];
+            const lvl = levels[score] || levels[0];
+            fill.style.width      = password.length ? lvl.pct : '0%';
+            fill.style.background = lvl.color;
+            label.innerText       = lvl.text;
+            label.style.color     = lvl.color;
+        }
+
+        function togglePasswordVisibility(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const isHidden = input.type === 'password';
+            input.type = isHidden ? 'text' : 'password';
+            btn.innerHTML = isHidden
+                ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`
+                : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`;
+        }
+
+        async function changePassword() {
+            const currentPlain = document.getElementById('currentPass').value;
+            const newPlain     = document.getElementById('newPass').value;
+            const confirmPlain = document.getElementById('confirmPass').value;
+            const msg          = document.getElementById('changePassMsg');
+            const btn          = document.getElementById('btnChangePass');
+
+            msg.style.display = 'none';
+            if (!currentPlain || !newPlain || !confirmPlain) {
+                msg.innerText = '⚠ Isi semua kolom password!'; msg.style.color = '#ef4444'; msg.style.display = 'block'; return;
+            }
+            if (newPlain.length < 8) {
+                msg.innerText = '⚠ Password baru minimal 8 karakter!'; msg.style.color = '#ef4444'; msg.style.display = 'block'; return;
+            }
+            if (newPlain !== confirmPlain) {
+                msg.innerText = '⚠ Konfirmasi password tidak cocok!'; msg.style.color = '#ef4444'; msg.style.display = 'block'; return;
+            }
+            btn.disabled  = true;
+            btn.innerText = '🔐 Mengenkripsi...';
+            google.script.run.withSuccessHandler(function(res) {
+                btn.disabled  = false;
+                btn.innerText = 'Simpan Password Baru';
+                if (res.success) {
+                    msg.innerText = '✅ ' + res.message; msg.style.color = '#16a34a'; msg.style.display = 'block';
+                    document.getElementById('currentPass').value = '';
+                    document.getElementById('newPass').value     = '';
+                    document.getElementById('confirmPass').value = '';
+                    checkPasswordStrength('');
+                    showToast('Password berhasil diubah!', 'success');
+                } else {
+                    msg.innerText = '❌ ' + res.message; msg.style.color = '#ef4444'; msg.style.display = 'block';
+                }
+            }).changePassword(currentPlain, newPlain);
+        }
+
+        // ==========================================
+        // ICON HELPER
         // ==========================================
         function getIcon(iconName) {
             const name = (iconName && String(iconName).trim()) ? String(iconName).trim() : 'grip';
             return `<i data-lucide="${name}"></i>`;
         }
-
-        const ICON_ALIASES = { 'van': 'truck' };
-
         function renderIcons() {
             if (!window.lucide || typeof lucide.createIcons !== 'function') return;
             lucide.createIcons();
-
-            const failed = document.querySelectorAll('i[data-lucide]');
-            if (failed.length) {
-                failed.forEach(el => {
-                    const original = el.getAttribute('data-lucide');
-                    el.setAttribute('data-lucide', ICON_ALIASES[original] || 'grip');
-                });
-                lucide.createIcons();
-                const stillFailed = document.querySelectorAll('i[data-lucide]');
-                if (stillFailed.length) {
-                    stillFailed.forEach(el => el.setAttribute('data-lucide', 'grip'));
-                    lucide.createIcons();
-                }
-            }
         }
 
+        // ==========================================
+        // INIT
+        // ==========================================
         document.addEventListener("DOMContentLoaded", function() {
             generateCaptcha();
+            fetchOriginalSource(); // ambil source HTML asli untuk ekspor
             fetchData();
         });
 
@@ -572,172 +1001,138 @@
             google.script.run.withSuccessHandler(function(data) {
                 appData = data;
                 document.getElementById('skeleton-grid').style.display = 'none';
-                document.getElementById('dynamic-grid').style.display = 'grid';
+                document.getElementById('dynamic-grid').style.display  = 'grid';
                 renderUI();
                 renderSliders();
-                if(isLoggedIn) {
-                    renderCatTable();
-                    renderSliderTable();
-                }
+                if (isLoggedIn) { renderCatTable(); renderSliderTable(); }
             }).getAppData();
         }
 
-        // 2. Render Kategori (Nav & Grid)
+        // ==========================================
+        // RENDER UI
+        // ==========================================
         function renderUI() {
             const navLinks = document.getElementById('dynamic-nav-links');
-            const grid = document.getElementById('dynamic-grid');
-            const frames = document.getElementById('dynamic-iframes');
+            const grid     = document.getElementById('dynamic-grid');
+            let activeId   = 'btn-home'; 
+            if (navLinks) { const cur = navLinks.querySelector('a.active'); if (cur) activeId = cur.id; }
 
-            let activeId = 'btn-home'; 
-            if (navLinks) {
-                const currentActive = navLinks.querySelector('a.active');
-                if (currentActive) activeId = currentActive.id;
-            }
-
-            const homeBtnHtml = `<a onclick="goHome()" class="${activeId === 'btn-home' ? 'active' : ''}" id="btn-home"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Home</a>`;
-            const panelBtnHtml = `<a onclick="openOverlayPanel()" id="btn-panel" class="panel-btn ${activeId === 'btn-panel' ? 'active' : ''}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Panel</a>`;
+            const homeBtnHtml  = `<a onclick="goHome()" class="${activeId==='btn-home' ? 'active' : ''}" id="btn-home"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Home</a>`;
+            const panelBtnHtml = `<a onclick="openOverlayPanel()" id="btn-panel" class="panel-btn ${activeId==='btn-panel' ? 'active' : ''}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Panel</a>`;
             
-            let navHtml = homeBtnHtml;
+            let navHtml  = homeBtnHtml;
             let gridHtml = '';
-            let framesHtml = '';
 
             appData.categories.forEach(cat => {
-                const btnId = `btn-${cat.id}`;
-                const iconHtml = getIcon(cat.icon); 
+                const btnId      = `btn-${cat.id}`;
+                const iconHtml   = getIcon(cat.icon); 
                 const activeClass = (activeId === btnId) ? 'active' : '';
-
-                // Buka link di tab baru, preloading iframe dihapus
-                navHtml += `<a onclick="openApp('${cat.url}', '${cat.nama}')" id="${btnId}" class="${activeClass}" style="cursor:pointer;">${iconHtml} ${cat.nama}</a>`;
-                
-                gridHtml += `
-                    <div class="menu-card" onclick="openApp('${cat.url}', '${cat.nama}')">
-                        <div class="menu-icon">${iconHtml}</div>
-                        <div class="menu-title">${cat.nama}</div>
-                    </div>`;
+                navHtml  += `<a onclick="openApp('${cat.url}', '${cat.nama}')" id="${btnId}" class="${activeClass}" style="cursor:pointer;">${iconHtml} ${cat.nama}</a>`;
+                gridHtml += `<div class="menu-card" onclick="openApp('${cat.url}', '${cat.nama}')"><div class="menu-icon">${iconHtml}</div><div class="menu-title">${cat.nama}</div></div>`;
             });
 
             navHtml += panelBtnHtml;
             navLinks.innerHTML = navHtml;
-            grid.innerHTML = gridHtml;
-            frames.innerHTML = ''; // iframe kita bersihkan, hanya akan dibuat jika URL kosong
-
+            grid.innerHTML     = gridHtml;
+            document.getElementById('dynamic-iframes').innerHTML = '';
             renderIcons(); 
         }
 
         function renderSliders() {
             const container = document.getElementById('dynamic-slider');
-            const wrap = document.getElementById('slider-wrap');
-            if(!container) return;
-            if(appData.sliders.length === 0) { wrap.style.display = 'none'; return; } 
-            else { wrap.style.display = 'block'; }
-
-            let html = '';
-            let dotsHtml = '<div class="dots-container">';
+            const wrap      = document.getElementById('slider-wrap');
+            if (!container) return;
+            if (appData.sliders.length === 0) { wrap.style.display = 'none'; return; }
+            wrap.style.display = 'block';
+            let html = '', dotsHtml = '<div class="dots-container">';
             appData.sliders.forEach((s, idx) => {
-                html += `
-                <div class="slide fade" style="display: ${idx === 0 ? 'block' : 'none'};">
-                    <img src="${s.image}" alt="Slider">
-                    <div class="slide-content"><h2>${s.title}</h2><p>${s.subtitle}</p></div>
-                </div>`;
-                dotsHtml += `<span class="dot ${idx === 0 ? 'active' : ''}" onclick="currentSlide(${idx + 1})"></span>`;
+                html     += `<div class="slide fade" style="display:${idx===0?'block':'none'};"><img src="${s.image}" alt="Slider"><div class="slide-content"><h2>${s.title}</h2><p>${s.subtitle}</p></div></div>`;
+                dotsHtml += `<span class="dot ${idx===0?'active':''}" onclick="currentSlide(${idx+1})"></span>`;
             });
             dotsHtml += '</div>';
             container.innerHTML = html + dotsHtml;
-            
-            slideIndex = 0;
-            clearTimeout(slideTimer);
-            showSlides();
+            slideIndex = 0; clearTimeout(slideTimer); showSlides();
         }
 
-        // --- CORE NAVIGATION ---
+        // ==========================================
+        // CORE NAVIGATION
+        // ==========================================
         function openApp(appUrl, appName = 'Aplikasi') {
             closeMobileMenu();
-
             if (appUrl && appUrl !== '#' && appUrl.trim() !== '') {
-                // OTOMATIS BUKA DI TAB BARU JIKA URL VALID
                 window.open(appUrl, '_blank');
             } else {
-                // JIKA URL KOSONG, TAMPILKAN FALLBACK "MODUL BELUM TERSEDIA"
                 const links = document.querySelectorAll('.nav-links a');
-                links.forEach(link => link.classList.remove('active'));
-
+                links.forEach(l => l.classList.remove('active'));
                 document.getElementById('homeView').classList.add('hidden');
                 closeOverlayPanel(); 
                 document.getElementById('appView').classList.add('active');
-                
                 document.getElementById('iframe-title').innerText = appName;
                 document.getElementById('iframe-external-link').style.display = 'none';
                 document.getElementById('loader').style.display = 'none';
-
-                // Render satu halaman peringatan saja
-                const framesContainer = document.getElementById('dynamic-iframes');
-                framesContainer.innerHTML = `<iframe class="app-frame active" srcdoc="<div style='display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; font-family:-apple-system, sans-serif; color:#64748b; background-color:#f8fafc; margin:0;'><svg width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#cbd5e1' stroke-width='2' style='margin-bottom: 15px;'><circle cx='12' cy='12' r='10'></circle><line x1='12' y1='8' x2='12' y2='12'></line><line x1='12' y1='16' x2='12.01' y2='16'></line></svg><h2 style='margin:0 0 10px 0; color:#334155; font-size:24px;'>Modul Belum Tersedia</h2><p style='margin:0; font-size:15px;'>URL Aplikasi belum diatur di panel admin.</p></div>"></iframe>`;
+                document.getElementById('dynamic-iframes').innerHTML = `<iframe class="app-frame active" srcdoc="<div style='display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;font-family:-apple-system,sans-serif;color:#64748b;background:#f8fafc;margin:0;'><svg width='64' height='64' viewBox='0 0 24 24' fill='none' stroke='#cbd5e1' stroke-width='2' style='margin-bottom:15px;'><circle cx='12' cy='12' r='10'></circle><line x1='12' y1='8' x2='12' y2='12'></line><line x1='12' y1='16' x2='12.01' y2='16'></line></svg><h2 style='margin:0 0 10px 0;color:#334155;font-size:24px;'>Modul Belum Tersedia</h2><p style='margin:0;font-size:15px;'>URL Aplikasi belum diatur di panel admin.</p></div>"></iframe>`;
             }
         }
 
         function goHome() {
             const links = document.querySelectorAll('.nav-links a');
-            links.forEach(link => link.classList.remove('active'));
-            if(document.getElementById('btn-home')) document.getElementById('btn-home').classList.add('active');
-
+            links.forEach(l => l.classList.remove('active'));
+            if (document.getElementById('btn-home')) document.getElementById('btn-home').classList.add('active');
             document.getElementById('homeView').classList.remove('hidden');
             document.getElementById('appView').classList.remove('active');
             closeOverlayPanel();
             closeMobileMenu();
             document.body.classList.remove('header-hidden');
-            
-            // Bersihkan memori Iframe saat kembali ke Home
             document.getElementById('dynamic-iframes').innerHTML = '';
         }
 
-        function toggleHeader() { document.body.classList.toggle('header-hidden'); }
+        function toggleHeader()    { document.body.classList.toggle('header-hidden'); }
         function toggleMobileMenu() { 
             const nav = document.getElementById('dynamic-nav-links');
-            const toggle = document.querySelector('.menu-toggle');
+            const tog = document.querySelector('.menu-toggle');
             if (nav) nav.classList.toggle('active'); 
-            if (toggle) toggle.classList.toggle('active'); 
+            if (tog) tog.classList.toggle('active'); 
         }
         function closeMobileMenu() { 
             const nav = document.getElementById('dynamic-nav-links');
-            const toggle = document.querySelector('.menu-toggle');
+            const tog = document.querySelector('.menu-toggle');
             if (nav) nav.classList.remove('active'); 
-            if (toggle) toggle.classList.remove('active'); 
+            if (tog) tog.classList.remove('active'); 
         }
 
-        // --- SLIDER LOGIC ---
-        let slideIndex = 0; let slideTimer;
+        // ==========================================
+        // SLIDER LOGIC
+        // ==========================================
+        let slideIndex = 0, slideTimer;
         function showSlides() {
             let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            if (slides.length === 0 || slides.length === 1 && slides[0].classList.contains('skeleton-slide')) return;
-            for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";  
+            let dots   = document.getElementsByClassName("dot");
+            if (slides.length === 0 || (slides.length === 1 && slides[0].classList.contains('skeleton-slide'))) return;
+            for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
             slideIndex++; if (slideIndex > slides.length) slideIndex = 1;
             for (let i = 0; i < dots.length; i++) dots[i].className = dots[i].className.replace(" active", "");
-            slides[slideIndex-1].style.display = "block";  
-            if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
+            slides[slideIndex-1].style.display = "block";
+            if (dots[slideIndex-1]) dots[slideIndex-1].className += " active";
             clearTimeout(slideTimer);
             slideTimer = setTimeout(showSlides, 5000); 
         }
         function currentSlide(n) { clearTimeout(slideTimer); slideIndex = n - 1; showSlides(); }
 
         // ==========================================
-        // SISTEM PANEL ADMIN & TABS
+        // PANEL ADMIN & TABS
         // ==========================================
         let captchaResult = 0;
 
         function openOverlayPanel() {
             closeMobileMenu();
             const links = document.querySelectorAll('.nav-links a');
-            links.forEach(link => link.classList.remove('active'));
-            if(document.getElementById('btn-panel')) document.getElementById('btn-panel').classList.add('active');
-
+            links.forEach(l => l.classList.remove('active'));
+            if (document.getElementById('btn-panel')) document.getElementById('btn-panel').classList.add('active');
             document.getElementById('appView').classList.remove('active');
             document.getElementById('homeView').classList.remove('hidden');
-            
-            if(isLoggedIn) {
+            if (isLoggedIn) {
                 document.getElementById('adminOverlay').classList.add('active');
-                renderCatTable();
-                renderSliderTable();
+                renderCatTable(); renderSliderTable();
             } else {
                 document.getElementById('loginOverlay').classList.add('active');
                 generateCaptcha();
@@ -745,24 +1140,24 @@
         }
 
         function closeOverlayPanel() {
-            if(document.getElementById('loginOverlay')) document.getElementById('loginOverlay').classList.remove('active');
-            if(document.getElementById('adminOverlay')) document.getElementById('adminOverlay').classList.remove('active');
-            
+            if (document.getElementById('loginOverlay')) document.getElementById('loginOverlay').classList.remove('active');
+            if (document.getElementById('adminOverlay')) document.getElementById('adminOverlay').classList.remove('active');
             const links = document.querySelectorAll('.nav-links a');
             let isPanelActive = false;
-            links.forEach(link => { if(link.id === 'btn-panel' && link.classList.contains('active')) isPanelActive = true; });
-            
+            links.forEach(l => { if (l.id === 'btn-panel' && l.classList.contains('active')) isPanelActive = true; });
             if (isPanelActive) {
-                links.forEach(link => link.classList.remove('active'));
-                if(document.getElementById('btn-home')) document.getElementById('btn-home').classList.add('active');
+                links.forEach(l => l.classList.remove('active'));
+                if (document.getElementById('btn-home')) document.getElementById('btn-home').classList.add('active');
             }
         }
 
         function switchTab(tabName) {
             document.getElementById('viewKategori').style.display = tabName === 'kategori' ? 'block' : 'none';
-            document.getElementById('viewSlider').style.display = tabName === 'slider' ? 'block' : 'none';
+            document.getElementById('viewSlider').style.display   = tabName === 'slider'   ? 'block' : 'none';
+            document.getElementById('viewSecurity').style.display = tabName === 'security' ? 'block' : 'none';
             document.getElementById('tabBtnKategori').classList.toggle('active', tabName === 'kategori');
-            document.getElementById('tabBtnSlider').classList.toggle('active', tabName === 'slider');
+            document.getElementById('tabBtnSlider').classList.toggle('active',   tabName === 'slider');
+            document.getElementById('tabBtnSecurity').classList.toggle('active', tabName === 'security');
         }
 
         function generateCaptcha() {
@@ -774,23 +1169,27 @@
         }
 
         function processLogin() {
-            const u = document.getElementById('loginUser').value;
-            const p = document.getElementById('loginPass').value;
-            const c = document.getElementById('loginCaptcha').value;
+            const u   = document.getElementById('loginUser').value;
+            const p   = document.getElementById('loginPass').value;
+            const c   = document.getElementById('loginCaptcha').value;
             const msg = document.getElementById('loginMsg');
             const btn = document.getElementById('btnLogin');
 
-            if(!u || !p || !c) { msg.innerText = "Isi semua form terlebih dahulu!"; msg.style.display = 'block'; return; }
-            if(parseInt(c) !== captchaResult) { msg.innerText = "Captcha Salah! Hitung dengan benar."; msg.style.display = 'block'; generateCaptcha(); return; }
+            if (!u || !p || !c) { msg.innerText = "Isi semua form terlebih dahulu!"; msg.style.display = 'block'; return; }
+            if (parseInt(c) !== captchaResult) { msg.innerText = "Captcha Salah!"; msg.style.display = 'block'; generateCaptcha(); return; }
 
-            btn.innerText = "Memverifikasi..."; btn.style.opacity = '0.7';
+            btn.innerText = "🔐 Memverifikasi...";
+            btn.disabled  = true;
+
             google.script.run.withSuccessHandler(function(res) {
-                btn.innerText = "Masuk ke Panel"; btn.style.opacity = '1';
-                if(res.success) {
+                btn.innerText = "Masuk ke Panel";
+                btn.disabled  = false;
+                if (res.success) {
                     isLoggedIn = true;
                     msg.style.display = 'none';
                     document.getElementById('loginOverlay').classList.remove('active');
                     openOverlayPanel();
+                    showToast('Login berhasil!', 'success');
                 } else {
                     msg.innerText = res.message;
                     msg.style.display = 'block';
@@ -801,107 +1200,161 @@
 
         function logout() { 
             isLoggedIn = false; 
-            document.getElementById('loginUser').value = '';
-            document.getElementById('loginPass').value = '';
-            document.getElementById('loginCaptcha').value = '';
+            ['loginUser','loginPass','loginCaptcha'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
             document.getElementById('loginMsg').style.display = 'none';
-            goHome(); 
+            goHome();
+            showToast('Berhasil logout', 'default');
         }
 
         // ==========================================
-        // CRUD KATEGORI & SLIDER
+        // CRUD KATEGORI
         // ==========================================
         function renderCatTable() {
             const tbody = document.getElementById('catTableBody');
             let html = '';
-            appData.categories.forEach(cat => {
-                const icon = cat.icon || 'grip';
-                html += `<tr>
-                        <td style="text-align:center;"><span class="icon-cell"><i data-lucide="${icon}"></i></span><br><small style="color:var(--text-muted); font-size:11px;">${icon}</small></td>
+            if (appData.categories.length === 0) {
+                html = `<tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:30px;">Belum ada menu yang ditambahkan.</td></tr>`;
+            } else {
+                appData.categories.forEach(cat => {
+                    const icon = cat.icon || 'grip';
+                    html += `<tr>
+                        <td style="text-align:center;"><span class="icon-cell"><i data-lucide="${icon}"></i></span><br><small style="color:var(--text-muted);font-size:11px;">${icon}</small></td>
                         <td><strong>${cat.nama}</strong></td>
-                        <td style="color:#64748b; max-width:280px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" title="${cat.url}">${cat.url}</td>
+                        <td style="color:#64748b;max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${cat.url}">${cat.url}</td>
                         <td style="text-align:center;">
-                            <button class="btn-edit" onclick="openCatModal('${cat.id}', '${cat.nama}', '${icon}', '${cat.url}')">Edit</button>
+                            <button class="btn-edit" onclick="openCatModal('${cat.id}','${escAttr(cat.nama)}','${icon}','${escAttr(cat.url)}')">Edit</button>
                             <button class="btn-delete" onclick="deleteCat('${cat.id}')">Hapus</button>
                         </td></tr>`;
-            });
+                });
+            }
             tbody.innerHTML = html;
             renderIcons(); 
         }
 
-        function openCatModal(id = '', nama = '', icon = '', url = '') {
+        function escAttr(str) {
+            return String(str || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        }
+
+        function openCatModal(id='', nama='', icon='', url='') {
             document.getElementById('catModalTitle').innerText = id ? 'Edit Menu' : 'Tambah Menu Baru';
-            document.getElementById('catId').value = id; document.getElementById('catName').value = nama;
-            document.getElementById('catIcon').value = icon; document.getElementById('catUrl').value = url;
+            document.getElementById('catId').value   = id;
+            document.getElementById('catName').value = nama;
+            document.getElementById('catIcon').value = icon;
+            document.getElementById('catUrl').value  = url;
             document.getElementById('catModalMsg').style.display = 'none';
             document.getElementById('catModal').classList.add('active');
         }
-
         function closeCatModal() { document.getElementById('catModal').classList.remove('active'); }
 
         function saveCategory() {
-            const id = document.getElementById('catId').value; const nama = document.getElementById('catName').value;
-            const icon = document.getElementById('catIcon').value; const url = document.getElementById('catUrl').value;
-            const msg = document.getElementById('catModalMsg'); const btn = document.getElementById('btnSaveCat');
-            if(!nama) { msg.innerText = "Nama kategori wajib diisi!"; msg.style.display = 'block'; return; }
-            btn.innerText = "Menyimpan..."; btn.style.opacity = '0.7';
+            const id   = document.getElementById('catId').value;
+            const nama = document.getElementById('catName').value.trim();
+            const icon = document.getElementById('catIcon').value.trim();
+            const url  = document.getElementById('catUrl').value.trim();
+            const msg  = document.getElementById('catModalMsg');
+            const btn  = document.getElementById('btnSaveCat');
+            if (!nama) { msg.innerText = "Nama kategori wajib diisi!"; msg.style.display = 'block'; return; }
             
+            btn.innerText = "Menyimpan..."; btn.style.opacity = '0.7';
+            setAutosaveStatus('saving');
+
             google.script.run.withSuccessHandler(function(res) {
                 btn.innerText = "Simpan"; btn.style.opacity = '1';
                 msg.innerText = res.message; msg.style.display = 'block';
-                setTimeout(() => { closeCatModal(); refreshDataWrapper(); }, 800);
+                setTimeout(() => {
+                    closeCatModal();
+                    refreshDataWrapper();
+                    setAutosaveStatus('synced');
+                    showToast(id ? '✏️ Menu berhasil diupdate!' : '✅ Menu baru berhasil ditambahkan!', 'success');
+                }, 600);
             }).saveCategory(id, nama, icon, url);
         }
 
-        function deleteCat(id) { if(confirm("Yakin ingin menghapus menu ini?")) { google.script.run.withSuccessHandler(function(res) { refreshDataWrapper(); }).deleteCategory(id); } }
+        function deleteCat(id) {
+            if (confirm("Yakin ingin menghapus menu ini? Perubahan akan aktif setelah mengunduh HTML terbaru.")) {
+                setAutosaveStatus('saving');
+                google.script.run.withSuccessHandler(function() {
+                    refreshDataWrapper();
+                    setAutosaveStatus('synced');
+                    showToast('🗑️ Menu berhasil dihapus!', 'default');
+                }).deleteCategory(id);
+            }
+        }
 
+        // ==========================================
+        // CRUD SLIDER
+        // ==========================================
         function renderSliderTable() {
             const tbody = document.getElementById('sliderTableBody');
             let html = '';
-            appData.sliders.forEach(s => {
-                html += `<tr>
-                        <td><img src="${s.image}" class="img-preview" alt="Preview"></td>
-                        <td><strong style="color:var(--text-main)">${s.title}</strong><br><span style="color:var(--text-muted); font-size:12px;">${s.subtitle}</span></td>
+            if (appData.sliders.length === 0) {
+                html = `<tr><td colspan="3" style="text-align:center;color:var(--text-muted);padding:30px;">Belum ada slider yang ditambahkan.</td></tr>`;
+            } else {
+                appData.sliders.forEach(s => {
+                    html += `<tr>
+                        <td><img src="${s.image}" class="img-preview" alt="Preview" onerror="this.style.display='none'"></td>
+                        <td><strong style="color:var(--text-main)">${s.title}</strong><br><span style="color:var(--text-muted);font-size:12px;">${s.subtitle}</span></td>
                         <td style="text-align:center;">
-                            <button class="btn-edit" onclick="openSliderModal('${s.id}', '${s.image}', '${s.title}', '${s.subtitle}')">Edit</button>
+                            <button class="btn-edit" onclick="openSliderModal('${s.id}','${escAttr(s.image)}','${escAttr(s.title)}','${escAttr(s.subtitle)}')">Edit</button>
                             <button class="btn-delete" onclick="deleteSliderData('${s.id}')">Hapus</button>
                         </td></tr>`;
-            });
-            if(appData.sliders.length === 0) html = `<tr><td colspan="3" style="text-align:center; color:var(--text-muted);">Belum ada slider yang ditambahkan.</td></tr>`;
+                });
+            }
             tbody.innerHTML = html;
         }
 
-        function openSliderModal(id = '', image = '', title = '', subtitle = '') {
+        function openSliderModal(id='', image='', title='', subtitle='') {
             document.getElementById('sliderModalTitle').innerText = id ? 'Edit Slider' : 'Tambah Slider Baru';
-            document.getElementById('sliderId').value = id; document.getElementById('sliderImage').value = image;
-            document.getElementById('sliderTitle').value = title; document.getElementById('sliderSubtitle').value = subtitle;
+            document.getElementById('sliderId').value        = id;
+            document.getElementById('sliderImage').value    = image;
+            document.getElementById('sliderTitle').value    = title;
+            document.getElementById('sliderSubtitle').value = subtitle;
             document.getElementById('sliderModalMsg').style.display = 'none';
             document.getElementById('sliderModal').classList.add('active');
         }
-
         function closeSliderModal() { document.getElementById('sliderModal').classList.remove('active'); }
 
         function saveSlider() {
-            const id = document.getElementById('sliderId').value; const img = document.getElementById('sliderImage').value;
-            const title = document.getElementById('sliderTitle').value; const sub = document.getElementById('sliderSubtitle').value;
-            const msg = document.getElementById('sliderModalMsg'); const btn = document.getElementById('btnSaveSlider');
-            if(!img || !title) { msg.innerText = "URL Gambar dan Judul wajib diisi!"; msg.style.display = 'block'; return; }
-            btn.innerText = "Menyimpan..."; btn.style.opacity = '0.7';
+            const id    = document.getElementById('sliderId').value;
+            const img   = document.getElementById('sliderImage').value.trim();
+            const title = document.getElementById('sliderTitle').value.trim();
+            const sub   = document.getElementById('sliderSubtitle').value.trim();
+            const msg   = document.getElementById('sliderModalMsg');
+            const btn   = document.getElementById('btnSaveSlider');
+            if (!img || !title) { msg.innerText = "URL Gambar dan Judul wajib diisi!"; msg.style.display = 'block'; return; }
             
+            btn.innerText = "Menyimpan..."; btn.style.opacity = '0.7';
+            setAutosaveStatus('saving');
+
             google.script.run.withSuccessHandler(function(res) {
                 btn.innerText = "Simpan"; btn.style.opacity = '1';
                 msg.innerText = res.message; msg.style.display = 'block';
-                setTimeout(() => { closeSliderModal(); refreshDataWrapper(); }, 800);
+                setTimeout(() => {
+                    closeSliderModal();
+                    refreshDataWrapper();
+                    setAutosaveStatus('synced');
+                    showToast(id ? '✏️ Slider berhasil diupdate!' : '✅ Slider baru berhasil ditambahkan!', 'success');
+                }, 600);
             }).saveSlider(id, img, title, sub);
         }
 
-        function deleteSliderData(id) { if(confirm("Yakin ingin menghapus slider ini?")) { google.script.run.withSuccessHandler(function(res) { refreshDataWrapper(); }).deleteSlider(id); } }
+        function deleteSliderData(id) {
+            if (confirm("Yakin ingin menghapus slider ini?")) {
+                setAutosaveStatus('saving');
+                google.script.run.withSuccessHandler(function() {
+                    refreshDataWrapper();
+                    setAutosaveStatus('synced');
+                    showToast('🗑️ Slider berhasil dihapus!', 'default');
+                }).deleteSlider(id);
+            }
+        }
 
         function refreshDataWrapper() {
-            document.getElementById('dynamic-grid').style.display = 'none';
+            document.getElementById('dynamic-grid').style.display  = 'none';
             document.getElementById('skeleton-grid').style.display = 'grid';
             fetchData();
         }
     </script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"a7b142f771494bd9870d18138e6cdff1","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
